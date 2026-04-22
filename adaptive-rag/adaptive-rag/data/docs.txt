@@ -1,0 +1,4 @@
+Python is a programming language.
+FAISS is used for similarity search.
+RAG stands for Retrieval-Augmented Generation.
+Machine learning enables systems to learn from data.
