@@ -3,9 +3,10 @@ from src.config import MODEL_NAME, OLLAMA_URL
 
 def generate_response(query, context):
     prompt = f"""
-You are a helpful assistant.
+You are an AI assistant.
 
-Use the provided context to answer the question.
+Use ONLY the provided context to answer the question clearly and accurately.
+If the answer is not in the context, say "Not enough information".
 
 Context:
 {context}
@@ -13,7 +14,7 @@ Context:
 Question:
 {query}
 
-Answer:
+Answer in 2-3 sentences:
 """
 
     try:

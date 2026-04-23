@@ -7,8 +7,8 @@ def main():
 
     query = input("Enter query: ")
 
-    results = retrieve(query, docs)
-    context = " ".join(results)
+    results = retrieve(query)
+    context = "\n".join(results)
 
     answer = generate_response(query, context)
 
