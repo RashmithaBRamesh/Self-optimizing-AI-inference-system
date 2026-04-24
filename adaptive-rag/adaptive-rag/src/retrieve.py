@@ -62,9 +62,7 @@ def rerank(vector_results, keyword_results):
     return [doc for doc, _ in ranked]
 
 # Final retrieve function
-def retrieve(query):
-    k = get_dynamic_k(query)
-
+def retrieve(query, k):
     vector_results, keyword_results = hybrid_retrieve(query, k)
     ranked_docs = rerank(vector_results, keyword_results)
 
