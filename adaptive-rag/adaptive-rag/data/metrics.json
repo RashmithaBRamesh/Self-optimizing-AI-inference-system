@@ -1,0 +1,17 @@
+[
+  {
+    "query": "Python?",
+    "latency": 6.927213907241821,
+    "answer_length": 350
+  },
+  {
+    "query": "What is machine learning?",
+    "latency": 3.819652795791626,
+    "answer_length": 551
+  },
+  {
+    "query": "Compare FAISS and traditional search methods",
+    "latency": 3.899416446685791,
+    "answer_length": 566
+  }
+]
