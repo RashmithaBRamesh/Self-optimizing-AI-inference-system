@@ -11,25 +11,37 @@ def main():
 
     query = input("Enter query: ")
 
-    start_time = time.time()
+    start_total = time.time()
 
+    # 🔥 Adaptive K
     k = decide_k(query)
     print(f"[Adaptive] Using K = {k}")
 
+    # 🔍 Retrieval timing
+    start_retrieval = time.time()
     results = retrieve(query, k)
     context = "\n".join(results)
+    end_retrieval = time.time()
 
+    # 🤖 Generation timing
+    start_gen = time.time()
     answer = generate_response(query, context)
+    end_gen = time.time()
 
-    end_time = time.time()
-    latency = end_time - start_time
+    end_total = time.time()
 
-    update_latency(latency)
+    retrieval_time = end_retrieval - start_retrieval
+    generation_time = end_gen - start_gen
+    total_latency = end_total - start_total
 
-    # 🔥 Log feedback
-    log_metrics(query, latency, len(answer))
+    update_latency(total_latency)
 
-    print(f"\n[Latency]: {latency:.2f}s")
+    log_metrics(query, total_latency, len(answer))
+
+    print(f"\n[Retrieval Time]: {retrieval_time:.2f}s")
+    print(f"[Generation Time]: {generation_time:.2f}s")
+    print(f"[Total Latency]: {total_latency:.2f}s")
+
     print("\nAnswer:\n", answer)
 
 if __name__ == "__main__":

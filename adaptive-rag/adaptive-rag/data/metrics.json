@@ -13,5 +13,20 @@
     "query": "Compare FAISS and traditional search methods",
     "latency": 3.899416446685791,
     "answer_length": 566
+  },
+  {
+    "query": "RAG",
+    "latency": 8.84333324432373,
+    "answer_length": 433
+  },
+  {
+    "query": "What does Vector database store?",
+    "latency": 5.760005950927734,
+    "answer_length": 470
+  },
+  {
+    "query": "FAISS",
+    "latency": 5.115520000457764,
+    "answer_length": 384
   }
 ]

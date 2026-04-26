@@ -1,8 +1,23 @@
-Python is a programming language.
-RAG stands for Retrieval-Augmented Generation.
-Machine learning enables systems to learn from data.
-FAISS (Facebook AI Similarity Search) is a library developed by Facebook AI Research for efficient similarity search and clustering of dense vectors.
-FAISS is commonly used in machine learning and information retrieval systems to find similar items in large datasets quickly.
-Retrieval-Augmented Generation (RAG) is a technique that combines document retrieval with text generation to improve response accuracy.
-Python is a high-level programming language widely used for machine learning, web development, and data science.
-Machine learning is a field of artificial intelligence that allows systems to learn patterns from data and make predictions.
+FAISS (Facebook AI Similarity Search) is a library developed for efficient similarity search and clustering of dense vectors.
+
+FAISS enables fast nearest neighbor search in high-dimensional spaces and is widely used in machine learning applications.
+
+BM25 is a ranking function used in information retrieval systems to estimate the relevance of documents based on keyword matching.
+
+Hybrid retrieval combines semantic search using embeddings and keyword-based search to improve retrieval accuracy.
+
+Embeddings are numerical representations of text that capture semantic meaning and relationships between words.
+
+SentenceTransformers is a framework used to generate embeddings for sentences and documents.
+
+Retrieval-Augmented Generation (RAG) is a technique that combines document retrieval with text generation.
+
+RAG improves accuracy by providing external knowledge to the language model during inference.
+
+Vector databases store embeddings and allow efficient similarity search.
+
+Semantic search finds results based on meaning rather than exact keyword matches.
+
+Machine learning is a field of artificial intelligence that allows systems to learn from data.
+
+Python is widely used in AI and machine learning due to its simplicity and powerful libraries.
