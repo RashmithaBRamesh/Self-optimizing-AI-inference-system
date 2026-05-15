@@ -17,6 +17,15 @@ def main():
     cached = get_from_cache(query)
     if cached:
         print("\n[Cache Hit ⚡]")
+
+        log_metrics(
+            query=query,
+            latency=0,
+            answer_length=len(cached),
+            k_used=0,
+            cache_hit=True
+        )
+
         print("\nAnswer:\n", cached)
         return
 
@@ -61,7 +70,13 @@ def main():
     save_to_cache(query, answer)
 
     # ✅ Log metrics
-    log_metrics(query, total_latency, len(answer))
+    log_metrics(
+        query=query,
+        latency=total_latency,
+        answer_length=len(answer),
+        k_used=k,
+        cache_hit=False
+    )
 
     print(f"\n[Retrieval Time]: {retrieval_time:.2f}s")
     print(f"[Generation Time]: {generation_time:.2f}s")

@@ -164,3 +164,12 @@ This system demonstrates how adaptive logic at inference time can balance:
 - quality (retrieval depth)
 
 without requiring model training.
+
+### Visualization Dashboard
+
+The system includes a dashboard for monitoring:
+
+- latency trends
+- answer quality
+- adaptive K usage
+- cache effectiveness

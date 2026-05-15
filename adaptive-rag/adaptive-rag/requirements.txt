@@ -2,3 +2,4 @@ faiss-cpu
 sentence-transformers 
 rank-bm25 
 ollama
+matplotlib

@@ -10,14 +10,16 @@ def init_log():
             json.dump([], f)
 
 # Save metrics
-def log_metrics(query, latency, answer_length):
+def log_metrics(query, latency, answer_length, k_used, cache_hit=False):
     with open(LOG_FILE, "r") as f:
         data = json.load(f)
 
     data.append({
         "query": query,
         "latency": latency,
-        "answer_length": answer_length
+        "answer_length": answer_length,
+        "k_used": k_used,
+        "cache_hit": cache_hit
     })
 
     with open(LOG_FILE, "w") as f:
