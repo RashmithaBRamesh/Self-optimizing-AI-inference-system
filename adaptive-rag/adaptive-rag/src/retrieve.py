@@ -46,24 +46,36 @@ def hybrid_retrieve(query, k):
 
     return vector_results, keyword_results
 
-def rerank(vector_results, keyword_results):
-    combined_scores = {}
+def rerank(query, vector_results, keyword_results):
+    combined_docs = {}
 
-    # Normalize + combine
+    # Combine all docs
     for doc, score in vector_results:
-        combined_scores[doc] = combined_scores.get(doc, 0) + (1 / (1 + score))  # lower distance = better
+        combined_docs[doc] = combined_docs.get(doc, 0)
 
     for doc, score in keyword_results:
-        combined_scores[doc] = combined_scores.get(doc, 0) + score
+        combined_docs[doc] = combined_docs.get(doc, 0)
 
-    # Sort by final score
-    ranked = sorted(combined_scores.items(), key=lambda x: x[1], reverse=True)
+    docs_list = list(combined_docs.keys())
+
+    # 🔥 Semantic Re-ranking
+    query_embedding = model.encode([query])[0]
+    doc_embeddings = model.encode(docs_list)
+
+    similarity_scores = []
+
+    for idx, doc_embedding in enumerate(doc_embeddings):
+        similarity = np.dot(query_embedding, doc_embedding)
+        similarity_scores.append((docs_list[idx], similarity))
+
+    # Sort by similarity
+    ranked = sorted(similarity_scores, key=lambda x: x[1], reverse=True)
 
     return [doc for doc, _ in ranked]
 
 # Final retrieve function
 def retrieve(query, k):
     vector_results, keyword_results = hybrid_retrieve(query, k)
-    ranked_docs = rerank(vector_results, keyword_results)
+    ranked_docs = rerank(query, vector_results, keyword_results)
 
     return [doc for doc in ranked_docs if len(doc) > 10][:k]

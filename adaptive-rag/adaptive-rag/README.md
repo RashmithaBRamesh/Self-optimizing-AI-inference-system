@@ -173,3 +173,8 @@ The system includes a dashboard for monitoring:
 - answer quality
 - adaptive K usage
 - cache effectiveness
+
+### Advanced Re-ranking
+
+The system performs semantic re-ranking by computing embedding similarity between the query and retrieved documents, improving relevance of final context selection.
+Semantic re-ranking improves retrieval quality but increases computation due to additional embedding operations.
