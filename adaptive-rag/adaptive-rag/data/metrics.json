@@ -1,32 +1,30 @@
 [
   {
-    "query": "Python?",
-    "latency": 6.927213907241821,
-    "answer_length": 350
+    "query": "What is Python?",
+    "latency": 6.9930291175842285,
+    "answer_length": 238,
+    "k_used": 3,
+    "cache_hit": false
   },
   {
-    "query": "What is machine learning?",
-    "latency": 3.819652795791626,
-    "answer_length": 551
+    "query": "What is FAISS?",
+    "latency": 2.9838967323303223,
+    "answer_length": 297,
+    "k_used": 2,
+    "cache_hit": false
   },
   {
-    "query": "Compare FAISS and traditional search methods",
-    "latency": 3.899416446685791,
-    "answer_length": 566
+    "query": "What is FAISS?",
+    "latency": 3.7520434856414795,
+    "answer_length": 360,
+    "k_used": 2,
+    "cache_hit": false
   },
   {
-    "query": "RAG",
-    "latency": 8.84333324432373,
-    "answer_length": 433
-  },
-  {
-    "query": "What does Vector database store?",
-    "latency": 5.760005950927734,
-    "answer_length": 470
-  },
-  {
-    "query": "FAISS",
-    "latency": 5.115520000457764,
-    "answer_length": 384
+    "query": "How is it used?",
+    "latency": 3.346045970916748,
+    "answer_length": 359,
+    "k_used": 2,
+    "cache_hit": false
   }
 ]

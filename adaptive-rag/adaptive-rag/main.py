@@ -6,6 +6,7 @@ from src.adaptive import decide_k, update_latency
 from src.feedback import init_log, log_metrics
 from src.cache import get_from_cache, save_to_cache
 from src.decompose import decompose_query
+from src.memory import add_to_memory
 
 def main():
     init_log()
@@ -56,6 +57,7 @@ def main():
     # 🤖 Generation timing
     start_gen = time.time()
     answer = generate_response(query, context)
+    add_to_memory(query, answer)
     end_gen = time.time()
 
     end_total = time.time()

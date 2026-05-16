@@ -1,21 +1,26 @@
 import requests
 from src.config import MODEL_NAME, OLLAMA_URL
+from src.memory import get_memory_context
 
 def generate_response(query, context):
+    memory_context = get_memory_context()
+
     prompt = f"""
-You are an AI assistant.
+    You are an AI assistant.
 
-Use ONLY the provided context to answer the question clearly and accurately.
-If the answer is not in the context, say "Not enough information".
+    Use the conversation history and provided context to answer accurately.
 
-Context:
-{context}
+    Conversation History:
+    {memory_context}
 
-Question:
-{query}
+    Retrieved Context:
+    {context}
 
-Answer in 2-3 sentences:
-"""
+    Current Question:
+    {query}
+
+    Answer clearly and concisely:
+    """
 
     try:
         response = requests.post(
